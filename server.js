@@ -29,22 +29,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const sessionObj = {
   secret: 'mypassword',
-  proxy: true,
-  resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 60000 },
 }
 
 const PORT = process.env.PORT || 5000;
 
-sessionObj.cookie = { secure: true };
+// sessionObj.cookie = { secure: true };
 app.use(session(sessionObj));
 
 app.use('/users', userRoute);
 app.use('/sectors', sectorRoute);
 
 // static files for frontend
-if (process.env.VERCEL_ENV === 'production') {
+if (process.env.VERCEL_ENV !== 'production') {
 
 app.get('/', (req, res) => {
   app.use(express.static(path.resolve(__dirname, 'front-end', 'build')));
