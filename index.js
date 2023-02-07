@@ -23,7 +23,7 @@ mongoose.connect("mongodb+srv://mehedihasan:mehedihasan@cluster0.n565d6s.mongodb
 // mongoose.set('strictQuery', true);
 
 //enable all cors
-app.use(cors());
+// app.use(cors());
 
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: false }));
