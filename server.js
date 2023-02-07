@@ -43,7 +43,7 @@ app.use('/users', userRoute);
 app.use('/sectors', sectorRoute);
 
 // static files for frontend
-if (process.env.VERCEL_ENV !== 'production') {
+if (process.env.VERCEL_ENV === 'production') {
 
   app.get('/', (req, res) => {
     app.use(express.static(path.resolve(__dirname, 'front-end', 'build')));
