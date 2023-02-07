@@ -36,7 +36,7 @@ const sessionObj = {
 
 const PORT = process.env.PORT || 5000;
 
-if (process.env.VERCEL_ENV === 'production') sessionObj.cookie = { secure: true };
+if (process.env.VERCEL_ENV === 'production') sessionObj.cookie = { maxAge: 60000, secure: true };
 app.use(session(sessionObj));
 
 app.use('/users', userRoute);
