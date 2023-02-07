@@ -18,7 +18,10 @@ function App() {
     fetch('/users')
       .then((res) => res.json())
       .then((res) => {
-        if (res.response) setExistData(res.response);
+        if (res.response) {
+          setExistData(res.response);
+          setUserId(res.response._id)
+        }
         else { console.log({ res }) }
       })
       .catch((err) => console.log({ err }))
