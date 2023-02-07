@@ -99,7 +99,7 @@ export const UserInfo = ({ sectors, type, existData = {}, userId, setUserId, set
                 Sectors:
               </label>
               <select
-                className="w-full focus:outline-sky-600 "
+                className="w-full h-fit focus:outline-sky-600 "
                 id="selectors"
                 multiple=""
                 size="6"
