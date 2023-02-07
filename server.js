@@ -35,19 +35,19 @@ const sessionObj = {
 
 const PORT = process.env.PORT || 5000;
 
-sessionObj.cookie = { secure: true };
+if (process.env.VERCEL_ENV === 'production') sessionObj.cookie = { secure: true };
 app.use(session(sessionObj));
 
 app.use('/users', userRoute);
 app.use('/sectors', sectorRoute);
 
 // static files for frontend
-if (process.env.VERCEL_ENV === 'production') {
+if (process.env.VERCEL_ENV !== 'production') {
 
-app.get('/', (req, res) => {
-  app.use(express.static(path.resolve(__dirname, 'front-end', 'build')));
-  res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'));
-})
+  app.get('/', (req, res) => {
+    app.use(express.static(path.resolve(__dirname, 'front-end', 'build')));
+    res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'));
+  })
 }
 
 
