@@ -17,7 +17,7 @@ const __dirname = path.dirname(__filename);
 
 // console.log(process.env.MONGODB_URL)
 //connect to mongodb atlas database
-mongoose.connect("mongodb+srv://mehedihasan:mehedihasan@cluster0.n565d6s.mongodb.net/test-exam?retryWrites=true&w=majority")
+mongoose.connect(process.env.SERVER_URL)
   .then((res) => { console.log('connect successfully') })
   .catch((err) => { console.log({ err }) });
 // mongoose.set('strictQuery', true);
