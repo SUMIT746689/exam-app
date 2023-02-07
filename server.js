@@ -35,7 +35,7 @@ const sessionObj = {
 
 const PORT = process.env.PORT || 5000;
 
-// sessionObj.cookie = { secure: true };
+sessionObj.cookie = { secure: true };
 app.use(session(sessionObj));
 
 app.use('/users', userRoute);
