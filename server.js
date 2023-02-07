@@ -45,7 +45,7 @@ app.use('/users', userRoute);
 app.use('/sectors', sectorRoute);
 
 // app.use('/some-route', require(path.join(__dirname, 'api', 'routes', 'route.js')));
-console.log(path.join(__dirname, './front-end', 'build'))
+console.log(path.resolve(__dirname, 'front-end', 'build'))
 
 // static files for frontend
 // if (process.env.VERCEL_ENV !== 'production') {
