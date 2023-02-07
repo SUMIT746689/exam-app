@@ -51,8 +51,8 @@ console.log(path.join(__dirname, './front-end', 'build'))
 // if (process.env.VERCEL_ENV !== 'production') {
 
 app.get('/', (req, res) => {
-  app.use(express.static(path.join(__dirname, './front-end', 'build')));
-  res.sendFile(path.join(__dirname, './front-end', 'build', 'index.html'));
+  app.use(express.static(path.resolve(__dirname, 'front-end', 'build')));
+  res.sendFile(path.resolve(__dirname, 'front-end', 'build', 'index.html'));
 })
 // }
 
