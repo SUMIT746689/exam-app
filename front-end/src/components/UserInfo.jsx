@@ -99,7 +99,7 @@ export const UserInfo = ({ sectors, type, existData = {}, userId, setUserId, set
                 Sectors:
               </label>
               <select
-                className="w-full h-fit focus:outline-sky-600 "
+                className="w-full focus:outline-sky-600 "
                 id="selectors"
                 multiple=""
                 size="6"
@@ -153,7 +153,7 @@ export const UserInfo = ({ sectors, type, existData = {}, userId, setUserId, set
                 value={existData?.name}
               />
             </div>
-            <div className="mb-6 text-sm md:text-base h-40">
+            <div className="mb-6 text-sm md:text-base ">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="selectors"
